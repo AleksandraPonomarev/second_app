@@ -54,7 +54,7 @@ fun countComissionFirst() {
         val cardType = VKPAY
         val result = countComission(cardType, amount = amount, amountInMonth = amountInMonth)
         assertEquals(result, "Комиссия не взимается")
-        println("пятый тест размера комиссии прошел успешно")
+        println("пятый-один тест размера комиссии прошел успешно")
     }
     @org.junit.Test
     fun countComissionSixth() {
