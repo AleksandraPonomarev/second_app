@@ -184,7 +184,7 @@ fun countComissionFirst() {
         val amountInMonth= 7610000
         val comissionMin = 2500
         val result = comissionVisa(amount = amount, comissionMin = comissionMin, amountInMonth = amountInMonth)
-        assertEquals(result, "Размер комиссии в копейках 15750")
+        assertEquals(result, "Размер комиссии в копейках 157500")
         println("шестой тест комиссии Visa прошел успешно")
     }
 
