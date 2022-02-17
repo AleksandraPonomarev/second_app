@@ -73,7 +73,51 @@ fun countComissionFirst() {
         assertEquals(result, "Максимальная сумма переводов 15000 руб за один раз илил 40000 руб в месяц")
         println("седьмой тест размера комиссии прошел успешно")
     }
-
+    @org.junit.Test
+      fun countComissionEight() {
+          val amount = 21000000
+          val amountInMonth= 100000
+          val comissionStandart = 0.0085
+          val comissionMin = 2500
+          val result = countComission(amount = amount, comissionMin = comissionMin, comissionStandart=comissionStandart, amountInMonth = amountInMonth)
+          assertEquals(result, "Максимальная сумма переводов 15000 руб за один раз илил 40000 руб в месяц")
+          println("восьмой тест размера комиссии прошел успешно")
+      }
+/*     @org.junit.Test
+      fun countComissionNine() {
+          val amount = 21000000
+          val amountInMonth= 100000
+          val comissionStandart = 0.0085
+          val comissionMin = 2500
+          val cardType = "KADABRA"
+          val result = countComission(cardType = cardType, amount = amount, comissionMin = comissionMin, comissionStandart=comissionStandart, amountInMonth = amountInMonth)
+          assertEquals(result, "Начудили что-то")
+          println("девятый тест размера комиссии прошел успешно")
+      }
+      */
+      @org.junit.Test
+      fun countComissionTen() {
+          val amount = 2100000
+          val amountInMonth= 100000
+          val comissionStandart = 0.0085
+          val comissionMin = 2500
+          val cardType = VISA
+          val result = countComission(cardType = cardType, amount = amount, comissionMin = comissionMin, comissionStandart=comissionStandart, amountInMonth = amountInMonth)
+          assertEquals(result, "Размер комиссии в копейках 17850")
+          println("десятый тест размера комиссии прошел успешно")
+      }
+ /*     @org.junit.Test
+      fun countComissionEleven() {
+          val amount = 21000000
+          val amountInMonth= 100000
+          val comissionStandart = 0.0085
+          val comissionMin = 2500
+          val cardType = MASTERCARD
+          val result = countComission(cardType = cardType, amount = amount, comissionMin = comissionMin, comissionStandart=comissionStandart, amountInMonth = amountInMonth)
+          assertEquals(result, "Максимальная сумма переводов 150000 руб за один раз илил 600000 руб в месяц")
+          println("седьмой тест размера комиссии прошел успешно")
+      }
+  */
 
     @org.junit.Test
     fun comissionVisaFirst() {
@@ -119,9 +163,27 @@ fun countComissionFirst() {
     fun comissionVisaSixth() {
         val amount = 2100000
         val amountInMonth= 7610000
-        val comissionStandart = 0.0075
-        val comissionMin = 3500
+        val comissionStandart = 1.0
+        val comissionMin = 2500
         val result = comissionVisa(amount = amount, comissionStandart = comissionStandart, comissionMin = comissionMin, amountInMonth = amountInMonth)
+        assertEquals(result, "Размер комиссии в копейках 2100000")
+        println("шестой тест комиссии Visa прошел успешно")
+    }
+    @org.junit.Test
+    fun comissionVisaSeventh() {
+        val amount = 2100000
+        val amountInMonth= 7610000
+        val comissionStandart = 1.0
+        val result = comissionVisa(amount = amount, comissionStandart = comissionStandart, amountInMonth = amountInMonth)
+        assertEquals(result, "Размер комиссии в копейках 2100000")
+        println("шестой тест комиссии Visa прошел успешно")
+    }
+    @org.junit.Test
+    fun comissionVisaEight() {
+        val amount = 2100000
+        val amountInMonth= 7610000
+        val comissionMin = 2500
+        val result = comissionVisa(amount = amount, comissionMin = comissionMin, amountInMonth = amountInMonth)
         assertEquals(result, "Размер комиссии в копейках 15750")
         println("шестой тест комиссии Visa прошел успешно")
     }
@@ -181,6 +243,24 @@ fun countComissionFirst() {
         val result = comissionMastercard(amount = amount, amountInMonth = amountInMonth)
         assertEquals(result, "Комиссия не взимается")
         println("седьмой тест комиссии Mastercard прошел успешно")
+    }
+    @org.junit.Test
+    fun comissionMastercardEight() {
+        val amount = 21000
+        val amountInMonth= 610000
+        val comissionFix = 1000
+        val result = comissionMastercard(amount = amount, amountInMonth = amountInMonth, comissionFix = comissionFix)
+        assertEquals(result, "Размер комиссии в копейках 1126")
+        println("восьмой тест комиссии Mastercard прошел успешно")
+    }
+    @org.junit.Test
+    fun comissionMastercardNine() {
+        val amount = 21000
+        val amountInMonth= 610000
+        val comissionStandart = 0.07
+        val result = comissionMastercard(amount = amount, amountInMonth = amountInMonth, comissionStandart = comissionStandart)
+        assertEquals(result, "Размер комиссии в копейках 3470")
+        println("девятый тест комиссии Mastercard прошел успешно")
     }
 
     @org.junit.Test

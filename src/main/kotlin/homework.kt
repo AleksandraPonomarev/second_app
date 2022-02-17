@@ -15,11 +15,11 @@ fun main(){
     println("$result")
 }
 
-fun countComission(cardType: String = VKPAY, amountInMonth: Int, amount: Int): String {
+fun countComission(cardType: String = VKPAY, amountInMonth: Int, amount: Int, comissionStandart: Double=0.75, comissionMin: Int=3500, comissionFix: Int = 2000): String {
     return when (cardType) {
         VKPAY -> comissionVkPay(amount = amount, amountInMonth= amountInMonth)
-        MIR, VISA -> comissionVisa(amount = amount, amountInMonth= amountInMonth)
-        MASTERCARD, MAESTRO -> comissionMastercard(amount=amount, amountInMonth = amountInMonth)
+        MIR, VISA -> comissionVisa(amount = amount, amountInMonth= amountInMonth, comissionStandart = comissionStandart, comissionMin = comissionMin)
+        MASTERCARD, MAESTRO -> comissionMastercard(amount=amount, amountInMonth = amountInMonth, comissionStandart = comissionStandart, comissionFix = comissionFix)
         else ->"Начудили что-то"
     }
 }
